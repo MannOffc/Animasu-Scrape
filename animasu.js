@@ -60,7 +60,7 @@ return e
 
 async function donghua_list(page) {
 try {
-    var { data } = await axios.get("https://v5.animasu.cc/genre/donghua/page/" + page), title = [], status = [], epsd = [], type = [], url = [], img = [], result = [], $ = cheerio.load(data);
+    var { data } = await axios.get(baseUrl + "/genre/donghua/page/" + page), title = [], status = [], epsd = [], type = [], url = [], img = [], result = [], $ = cheerio.load(data);
     
     $(".tt").each(function(a, b) {
         let x = $(b).text().trim();
@@ -111,7 +111,7 @@ return e
 
 async function ongoing() {
 try {
-    var { data } = await axios.get("https://v5.animasu.cc/segera-tayang"), title = [], status = [], tayang = [], type = [], url = [], img = [], result = [], $ = cheerio.load(data)
+    var { data } = await axios.get(baseUrl + "/segera-tayang"), title = [], status = [], tayang = [], type = [], url = [], img = [], result = [], $ = cheerio.load(data)
     
     $('.tt').each(function(a, b) {
         let x = $(b).text().trim();
@@ -166,7 +166,7 @@ return e
 
 async function popular_list(page) {
 try {
-    var { data } = await axios.get("https://v5.animasu.cc/populer/?halaman=" + page), title = [], status = [], epsd = [], type = [], url = [], img = [], result = [], $ = cheerio.load(data);
+    var { data } = await axios.get(baseUrl + "/populer/?halaman=" + page), title = [], status = [], epsd = [], type = [], url = [], img = [], result = [], $ = cheerio.load(data);
     
     $(".tt").each((a, b) => {
         let x = $(b).text().trim();
@@ -216,7 +216,7 @@ return e
 
 async function top_list(q) {
 try {
-    var { data } = await axios.get("https://v5.animasu.cc/pencarian/?status=&tipe=&urutan=rating&halaman=" + q), title = [], status = [], epsd = [], type = [], url = [], img = [], result = [], $ = cheerio.load(data);
+    var { data } = await axios.get(baseUrl + "/pencarian/?status=&tipe=&urutan=rating&halaman=" + q), title = [], status = [], epsd = [], type = [], url = [], img = [], result = [], $ = cheerio.load(data);
     
     $(".tt").each((a, b) => {
         let x = $(b).text().trim();
@@ -259,7 +259,7 @@ try {
     })
     }
     return ({ status: 200, creator: "MannR", result })
-} catch (e) {
+} catch (e) 
 console.log(e)
 return e
 }
